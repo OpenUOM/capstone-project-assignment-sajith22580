@@ -60,48 +60,20 @@ export class TeacherTableComponent implements OnInit {
     })
   }
 
-  // search(value) {
-  //   let foundItems = [];
-  //   if (value.length <= 0) {
-  //     this.getTeacherData();
-  //   } else {
-  //     let b = this.teacherData.filter((teacher) => {
-  //       if (teacher[0].name.toLowerCase().indexOf(value) > -1) {
-  //         foundItems.push(teacher)
-  //       }
-  //     });
-  //     this.teacherData = foundItems;
-  //   }
-  // }
-
-
-  // search(value) {
-  //   if (value.length <= 0) {
-  //     this.getTeacherData(); // reset the teacherData array to original state
-  //   } else {
-  //     const searchTerm = value.toLowerCase(); // convert the search term to lowercase for case-insensitive search
-  //     const filteredData = this.teacherData.filter((teacher) => teacher[0].name.toLowerCase().includes(searchTerm));
-  //     this.teacherData = filteredData;
-  //   }
-  // }
-
   search(value) {
-    if (!value) {
-      // if search box is empty, reset the data to the original data
+    let foundItems = [];
+    if (value.length <= 0) {
       this.getTeacherData();
-      return;
+    } else {
+      let b = this.teacherData.filter((teacher) => {
+        if (teacher[0].name.toLowerCase().indexOf(value) > -1) {
+          foundItems.push(teacher)
+        }
+      });
+      this.teacherData = foundItems;
     }
-    const searchValue = value.toLowerCase();
-    const foundItems = this.teacherData.filter((item) => {
-      const itemName = item.name.toLowerCase();
-      return itemName.includes(searchValue);
-    });
-    // update the data with the found items
-    this.teacherData = foundItems;
   }
-  
 
-  
 
   deleteTeacher(itemid) {
     const test = {
