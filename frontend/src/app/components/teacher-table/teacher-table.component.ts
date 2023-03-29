@@ -87,16 +87,19 @@ export class TeacherTableComponent implements OnInit {
 
   search(value) {
     if (!value) {
-      // Reset the teacher data if search value is empty
+      // if search box is empty, reset the data to the original data
       this.getTeacherData();
-    } else {
-      // Filter the teacher data based on the search value
-      const filteredData = this.teacherData.filter((teacher) => {
-        return teacher[0].name.toLowerCase().includes(value.toLowerCase());
-      });
-      this.teacherData = filteredData;
+      return;
     }
-}
+    const searchValue = value.toLowerCase();
+    const foundItems = this.teacherData.filter((item) => {
+      const itemName = item.name.toLowerCase();
+      return itemName.includes(searchValue);
+    });
+    // update the data with the found items
+    this.teacherData = foundItems;
+  }
+  
 
   
 
