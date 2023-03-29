@@ -74,7 +74,6 @@ export class TeacherTableComponent implements OnInit {
     }
   }
 
-
   deleteTeacher(itemid) {
     const test = {
       id: itemid
