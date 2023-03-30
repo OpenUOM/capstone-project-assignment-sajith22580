@@ -60,7 +60,7 @@ export class TeacherTableComponent implements OnInit {
     })
   }
 
-  search(value) {
+  search(value: string | any[]) {
     let foundItems = [];
     if (value.length <= 0) {
       this.getTeacherData();
@@ -74,7 +74,7 @@ export class TeacherTableComponent implements OnInit {
     }
   }
 
-  deleteTeacher(itemid) {
+  deleteTeacher(itemid: any) {
     const test = {
       id: itemid
     }

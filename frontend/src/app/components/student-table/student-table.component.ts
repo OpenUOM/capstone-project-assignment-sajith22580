@@ -42,7 +42,7 @@ export class StudentTableComponent implements OnInit {
     })
   }
 
-  deleteStudent(itemid){
+  deleteStudent(itemid: any){
     const student = {
       id: itemid
     }
@@ -51,7 +51,7 @@ export class StudentTableComponent implements OnInit {
     })
   }
 
-  search(value) {
+  search(value: string | any[]) {
     let foundItems = [];
     if (value.length <= 0) {
       this.getStudentData();
