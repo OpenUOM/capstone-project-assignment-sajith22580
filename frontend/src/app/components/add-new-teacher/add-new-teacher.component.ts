@@ -14,7 +14,7 @@ export class AddNewTeacherComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  createTeacher(value: { id: any; name: any; age: any; }){
+  createTeacher(value){
 
     const teacher = {
       id : value.id,
